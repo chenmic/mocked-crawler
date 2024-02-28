@@ -52,17 +52,19 @@ Ensure that your Redis server is accessible. You may need to configure the conne
 
 3. Access the API endpoints:
 
-    - `/api/ingest`: Initiate a web crawl by sending a POST request with JSON data containing the URL to crawl.
-    - `/api/status/<crawl_id>`: Check the status of a crawl by providing the crawl ID.
+    - `/api/ingest`: Request a web crawl.
+    - `/api/status/<crawl_id>`: Check the status of a crawl.
 
     Example:
 
     ```bash
-    # Initiate a web crawl
-    curl -X POST -H "Content-Type: application/json" -d '{"url": "https://example.com"}' http://localhost:8888/api/ingest
+    # Request a web crawl to url <url> and receive notifications at <notify_at> (space seperated lsit of email / slack) to <notify_to> (space seperated list of recipients)
+    curl --location '<server_address>:8888/api/ingest' --form 'url="<url>"' --form 'notify_at="<notify_at>"' --form 'notify_to="<notify_to>"'
+    # for example
+    curl --location '<server_address>:8888/api/ingest' --form 'url="https://www.google.com"' --form 'notify_at="email"' --form 'notify_to="a@hello.com b@hello.com"'
 
     # Check the status of a crawl (replace <crawl_id> with the actual crawl ID)
-    curl http://localhost:8888/api/status/<crawl_id>
+    curl --location '<server_address>:8888/api/status/<crawl_id>'
     ```
 
 ## License
