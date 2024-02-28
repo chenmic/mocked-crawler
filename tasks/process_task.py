@@ -20,6 +20,5 @@ def process(crawl_id: str):
             elastic.add(crawl_id, html)
             sql.update_status(crawl_id, Status.COMPLETE)
             queue.enqueue(notify, crawl_id)
-        except Exception as e:
-            print(e)
+        except Exception:
             sql.update_status(crawl_id, Status.ERROR)
