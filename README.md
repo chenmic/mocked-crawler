@@ -10,14 +10,21 @@ This project implements a mocked crawler using Tornado for the web app, SQLite f
     git clone https://github.com/chenmic/mocked-crawler.git
     ```
 
-2. Install dependencies:
+2. Create and activate a virtual environment:
 
     ```bash
     cd mocked-crawler
+    python3 -m venv venv
+    . venv/bin/activate  
+    ```
+
+3. Install dependencies:
+
+    ```bash
     pip install -r requirements.txt
     ```
 
-3. Start Redis server:
+4. Start Redis server:
 
     Make sure you have Redis server running. You can install and start Redis using your package manager or by downloading it from [Redis' website](https://redis.io/docs/install/install-redis/).
 
