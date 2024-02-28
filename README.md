@@ -13,7 +13,7 @@ This project implements a mocked crawler using Tornado for the web app, SQLite f
 2. Install dependencies:
 
     ```bash
-    cd crawler
+    cd mocked-crawler
     pip install -r requirements.txt
     ```
 
