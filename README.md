@@ -7,7 +7,7 @@ This project implements a mocked crawler using Tornado for the web app, SQLite f
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/chenmic/crawler.git
+    git clone https://github.com/chenmic/mocked-crawler.git
     ```
 
 2. Install dependencies:
