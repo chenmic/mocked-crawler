@@ -12,7 +12,7 @@ class NotificationLogic:
         for channel_type in channel_types:
             notification_class = notification_channel_types.get(channel_type)
             if not notification_class:
-                return
+                continue
 
             notification = notification_class(channels)
             notification.send()
